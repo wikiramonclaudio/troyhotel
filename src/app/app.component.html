@@ -1,7 +1,17 @@
+<mat-sidenav-container class="sidenavcontainer">
 
-<div style="display: flex; justify-content: center; align-items: center; height: 200px;">
-  <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
-    Action
-  </button>
+  <mat-sidenav mode="over" #sidebar>
+    <app-sidebar (closeSideNav)="sidebar.close()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (SideNavigationToggle)="sidebar.toggle()"></app-header>
+    <app-navtabs></app-navtabs>
+  </mat-sidenav-content>
+
   <router-outlet></router-outlet>
-</div>
+</mat-sidenav-container>
+
+<!-- <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+  <router-outlet></router-outlet>
+</div> -->

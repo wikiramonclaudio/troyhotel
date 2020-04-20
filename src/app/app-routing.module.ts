@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { CelebrationsComponent } from './celebrations/celebrations.component';
 import { FoodBeverageComponent } from './food-beverage/food-beverage.component';
 import { OffersComponent } from './offers/offers.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'lifestyle', component: LifestyleComponent },
   { path: 'offers', component: OffersComponent },
   { path: 'food', component: FoodBeverageComponent },
-  { path: 'celebrations', component: CelebrationsComponent }
+  { path: 'celebrations', component: CelebrationsComponent },
+  { path: '', component: HomeComponent }
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports
