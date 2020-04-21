@@ -1,15 +1,114 @@
 @import '~@angular/material/theming';
+
 @include mat-core();
 
-$troyhotel-primary: mat-palette($mat-teal, 200);
-$troyhotel-accent:  mat-palette($mat-teal, 50);
+$troy-primary: (50 : #f6fbfb,
+  100 : #e8f5f4,
+  200 : #d9efed,
+  300 : #c9e9e6,
+  400 : #bee4e0,
+  500 : #b2dfdb,
+  600 : #abdbd7,
+  700 : #a2d7d2,
+  800 : #99d2cd,
+  900 : #8acac4,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #f6fffe,
+  A700 : #dcfffc,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
 
-$troyhotel-warn:    mat-palette($mat-red);
 
+$troy-accent: (
+  '50': 'fffcf3',
+  '100': 'fff7e0',
+  '200': 'fff2cc',
+  '300': 'ffedb8',
+  '400': 'ffe9a8',
+  '500': 'ffe599',
+  '600': 'ffe291',
+  '700': 'ffde86',
+  '800': 'ffda7c',
+  '900': 'ffd36b',
+  'A100': 'ffffff',
+  'A200': 'ffffff',
+  'A400': 'ffffff',
+  'A700': 'fffbf3',
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+
+$troyhotel-primary: mat-palette($troy-primary, 700, 300, 900); //default-lighter-darker
+$troyhotel-accent: mat-palette($troy-accent, 200, 100, 600);
+
+$troyhotel-warn: mat-palette($mat-red);
 $troyhotel-theme: mat-light-theme($troyhotel-primary, $troyhotel-accent, $troyhotel-warn);
+
+@import './app/navigation/navtabs/navtabs.component-theme';
 
 @include angular-material-theme($troyhotel-theme);
 
-.navtabs-container{
-  background-color: mat-color($troyhotel-accent);
+// navtabs component scss file
+@include navtabs-component-theme($troyhotel-theme);
+
+
+// **************************************************  font-family: 'Rubik', sans-serif;
+
+$troy-typography: mat-typography-config(
+  $font-family:  'Rubik, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3:     mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2:     mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(98px, 0px, 400),
+  $title:         mat-typography-level(61px, 32px, 500),
+  $subheading-2:  mat-typography-level(48px, 0.25px, 400),
+  $subheading-1:  mat-typography-level(35px, 0.25px, 400),
+  $body-2:        mat-typography-level(14px, 0.25px, 500),
+  $body-1:        mat-typography-level(16px, 0.5px, 400),
+  $caption:       mat-typography-level(12px, 1.25px, 400),
+  $button:        mat-typography-level(14px, 1.25px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+@include mat-base-typography($troy-typography);
+@include mat-checkbox-typography($troy-typography);
+@include angular-material-typography($troy-typography);
+@include mat-core($troy-typography);
+
+.mat-list-option:hover,
+.mat-list-option:focus,
+.mat-nav-list .mat-list-item:hover,
+.mat-nav-list .mat-list-item:focus,
+.mat-action-list .mat-list-item:hover,
+.mat-action-list .mat-list-item:focus {
+  background-color: mat-color($troyhotel-accent, 300);
+  color: mat-color($troyhotel-primary, darker);
 }

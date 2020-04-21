@@ -7,9 +7,12 @@
   <mat-sidenav-content>
     <app-header (SideNavigationToggle)="sidebar.toggle()"></app-header>
     <app-navtabs></app-navtabs>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
   </mat-sidenav-content>
 
-  <router-outlet></router-outlet>
 </mat-sidenav-container>
 
 <!-- <div style="display: flex; justify-content: center; align-items: center; height: 200px;">

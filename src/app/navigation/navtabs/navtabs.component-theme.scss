@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+@mixin navtabs-component-theme($troyalhotel-theme) {
+
+  $primary: map-get($troyhotel-theme, primary);
+  $accent: map-get($troyhotel-theme, accent);
+
+  // theme styles customized
+  .navtabs-container {
+    background-color: mat-color($primary, 500);
+  }
+
+}
+
+@include angular-material-theme($troyhotel-theme);

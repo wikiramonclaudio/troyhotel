@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'lifestyle', component: LifestyleComponent },
   { path: 'offers', component: OffersComponent },
   { path: 'food', component: FoodBeverageComponent },
+  { path: 'foodandbeverage', redirectTo: 'food',pathMatch: 'full' },
   { path: 'celebrations', component: CelebrationsComponent },
   { path: '', component: HomeComponent }
 ]; // sets up routes constant where you define your routes
